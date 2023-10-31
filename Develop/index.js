@@ -1,6 +1,8 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
+const { error } = require("console");
+const { generateKey } = require("crypto");
 
 // TODO: Create an array of questions for user input
 const questions = [{
@@ -86,76 +88,88 @@ const questions = [{
 }];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.appendFile(fileName, data, (err) => 
+    err ? console.error(err) : console.log("Success"));
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions).then(responses => {
+        console.log(responses);
+        //make a ref to this unlink
+        unlink('./Develop/README.md', (err) => {
+            err ? console.error(err) : console.log('Terminanted');
+        })
+        writeToFile('./Develop/README.md', generateMarkdown(responses));
+    })
+}
 
 // Function call to initialize app
 init();
 
-inquirer.prompt(questions).then(responses => {
-    const {nam, des, mot, res, sol, les, install, instruct, cre, lic, fea, con, tes, que} = responses;
-    fs.writeFile("README.md", (
-        `
-        #${nam}
+// inquirer.prompt(questions).then(responses => {
+//     const {nam, des, mot, res, sol, les, install, instruct, cre, lic, fea, con, tes, que} = responses;
+//     fs.writeFile("README.md", (
+//         `
+//         #${nam}
 
-        ## Description
+//         ## Description
 
-        ${des}
-         - ${mot}
-         - ${res}
-         - ${sol}
-         - ${les}
+//         ${des}
+//          - ${mot}
+//          - ${res}
+//          - ${sol}
+//          - ${les}
 
-        ## Table of Contents
+//         ## Table of Contents
 
-         - Installation
-         - Usage
-         - Credits
-         - License
-         - Badges
-         - Features
-         - How to Contribute
-         - Tests
+//          - Installation
+//          - Usage
+//          - Credits
+//          - License
+//          - Badges
+//          - Features
+//          - How to Contribute
+//          - Tests
 
-        ## Installation
+//         ## Installation
         
-        ${install}
+//         ${install}
 
-        ## Usage
+//         ## Usage
 
-        ${instruct}
+//         ${instruct}
 
-        ## Credits
+//         ## Credits
 
-        ${cre}
+//         ${cre}
 
-        ## License
+//         ## License
 
-        ${lic}
+//         ${lic}
 
-        ## Badges
+//         ## Badges
 
-        ## Features
+//         ## Features
 
-        ${fea}
+//         ${fea}
 
-        ## How to Contribute
+//         ## How to Contribute
 
-        ${con}
+//         ${con}
 
-        ## Tests
+//         ## Tests
 
-        ${tes}
+//         ${tes}
 
-        ## Questions
+//         ## Questions
 
-        ${que}
+//         ${que}
 
-        `
-    ), 
-    (error) => {if (error) 
-        console.log("ERROR")
-    })
-})
+//         `
+//     ), 
+//     (error) => {if (error) 
+//         console.log("ERROR")
+//     })
+// })
