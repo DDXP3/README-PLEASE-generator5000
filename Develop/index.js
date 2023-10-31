@@ -85,7 +85,13 @@ const questions = [{
 }];
 
 // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {}
+
+// TODO: Create a function to initialize app
+function init() {}
+
+// Function call to initialize app
+init();
 
 inquirer.prompt(questions).then(responses => {
     const {nam, des, mot, res, sol, les, install, instruct, cre, lic, bad, fea, con, tes, que} = responses;
@@ -154,9 +160,3 @@ inquirer.prompt(questions).then(responses => {
         console.log("ERROR")
     })
 })
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
