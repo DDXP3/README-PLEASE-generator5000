@@ -1,8 +1,8 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
-const { error } = require("console");
-const { generateKey } = require("crypto");
+// const { error } = require("console");
+// const { generateKey } = require("crypto");
 const genMardow = require('./utils/generateMarkdown')
 // ref this code
 const {unlink} = require('node:fs');
