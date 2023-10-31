@@ -56,12 +56,13 @@ const questions = [{
 {
     type:'list',
     message:'select your licence',
-    name: 'lic'
-},
-{
-    type:'list',
-    message:'select your badges',
-    name: 'bad'
+    name: 'lic',
+    choices: [
+        "Apache 2.0 License",
+        "Boost Software License 1.0",
+        "BSD 3-Clause License",
+        "BSD 2-Clause License"
+    ]
 },
 {
     type:'input',
@@ -94,7 +95,7 @@ function init() {}
 init();
 
 inquirer.prompt(questions).then(responses => {
-    const {nam, des, mot, res, sol, les, install, instruct, cre, lic, bad, fea, con, tes, que} = responses;
+    const {nam, des, mot, res, sol, les, install, instruct, cre, lic, fea, con, tes, que} = responses;
     fs.writeFile("README.md", (
         `
         #${nam}
@@ -135,8 +136,6 @@ inquirer.prompt(questions).then(responses => {
         ${lic}
 
         ## Badges
-
-        ${bad}
 
         ## Features
 
