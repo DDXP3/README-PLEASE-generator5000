@@ -52,6 +52,8 @@ function generateMarkdown(data) {
 
 ## Badges
 
+        ${bad}
+
 ## Features
 
         ${data.fea}
@@ -66,6 +68,7 @@ function generateMarkdown(data) {
 
 ## Questions
 
+        Contact Me @:
         ${data.que}
 `;
 }
