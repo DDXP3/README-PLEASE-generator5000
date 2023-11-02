@@ -63,10 +63,10 @@ const questions = [{
     message:'select your licence',
     name: 'lic',
     choices: [
+        "None",
         "Apache 2.0 License",
         "Boost Software License 1.0",
-        "BSD 3-Clause License",
-        "BSD 2-Clause License"
+        "BSD 3-Clause License"
     ]
 },
 {
