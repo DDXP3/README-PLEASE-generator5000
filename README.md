@@ -9,9 +9,17 @@
          - This does indeed help reduce time on making README files.
          - I learned how to use nodejs, and write codes that would work for nodejs. I was very behind and have been watching old videos to help myself.
 
+## Installation
+
+        This can be installed by doing a git pull from github.
+        https://github.com/DDXP3/README-PLEASE-generator5000
+
 ## Usage
 
         This can be used to make README files, I used it to make this README file, but I also modifyed it. For future use, this process will be quick and easy, and is super easy to modify.
+
+        The Video below will show how to use the generator:
+        https://watch.screencastify.com/v/BnjtOiUJXMk6iavUzsFw
 
 ## Credits
 
