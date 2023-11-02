@@ -5,7 +5,6 @@ const fs = require("fs");
 // const { generateKey } = require("crypto");
 const genMardow = require('./utils/generateMarkdown')
 // ref this code
-// const {unlink} = require('node:fs');
 
 // TODO: Create an array of questions for user input
 const questions = [{
@@ -100,10 +99,6 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions).then(responses => {
         console.log(responses);
-        //make a ref to this unlink
-        // unlink('../Develop/README.md', (err) => {
-        //     err ? console.error(err) : console.log('Terminanted');
-        // })
         writeToFile('../Develop/README.md', genMardow(responses));
     })
 }
